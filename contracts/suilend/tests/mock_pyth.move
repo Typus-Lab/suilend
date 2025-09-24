@@ -12,20 +12,20 @@ module suilend::mock_pyth {
         id: UID,
         price_objs: Bag,
     }
-
+    #[test_only]
     public fun init_state(ctx: &mut TxContext): PriceState {
         PriceState {
             id: object::new(ctx),
             price_objs: bag::new(ctx),
         }
     }
-
+    #[test_only]
     public fun register<T>(state: &mut PriceState, ctx: &mut TxContext) {
         let price_info_obj = new_price_info_obj((bag::length(&state.price_objs) as u8), ctx);
 
         bag::add(&mut state.price_objs, std::type_name::get<T>(), price_info_obj);
     }
-
+    #[test_only]
     public fun new_price_info_obj(idx: u8, ctx: &mut TxContext): PriceInfoObject {
         let mut v = vector::empty<u8>();
         vector::push_back(&mut v, idx);
@@ -59,11 +59,11 @@ module suilend::mock_pyth {
             ctx,
         )
     }
-
+    #[test_only]
     public fun get_price_obj<T>(state: &PriceState): &PriceInfoObject {
         bag::borrow(&state.price_objs, std::type_name::get<T>())
     }
-
+    #[test_only]
     public fun update_price<T>(state: &mut PriceState, price: u64, expo: u8, clock: &Clock) {
         let price_info_obj = bag::borrow_mut(&mut state.price_objs, std::type_name::get<T>());
         let price_info = price_info::get_price_info_from_price_info_object(price_info_obj);
@@ -88,7 +88,7 @@ module suilend::mock_pyth {
             ),
         );
     }
-
+    #[test_only]
     public fun update_decimal_price<T>(state: &mut PriceState, price: u64, expo: u8, is_exp_negative: bool, clock: &Clock) {
         let price_info_obj = bag::borrow_mut(&mut state.price_objs, std::type_name::get<T>());
         let price_info = price_info::get_price_info_from_price_info_object(price_info_obj);
