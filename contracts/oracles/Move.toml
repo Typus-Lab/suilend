@@ -6,9 +6,9 @@ published-at = "0xe84b649199654d18c38e727212f5d8dacfc3cf78d60d0a7fc85fd589f280eb
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies.Pyth]
-git = "https://github.com/solendprotocol/pyth-crosschain.git"
+git = "https://github.com/Typus-Lab/pyth-crosschain.git"
 subdir = "target_chains/sui/contracts"
-rev = "98e218c64bb75cf1350eb7b021e1ffcc3aedfd62"
+rev = "sui-contract-mainnet"
 
 [dependencies.Switchboard]
 git = "https://github.com/suilend/switchboard.git"
