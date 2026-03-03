@@ -10,7 +10,7 @@ subdir = "target_chains/sui/contracts"
 rev = "main"
 
 [dependencies.liquid_staking]
-git = "https://github.com/solendprotocol/liquid-staking.git"
+git = "https://github.com/Typus-Lab/liquid-staking.git"
 subdir = "contracts"
 rev = "main"
 
