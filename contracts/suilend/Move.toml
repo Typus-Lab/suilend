@@ -4,7 +4,7 @@ version = "0.0.1"
 published-at = "0xdf6df8a1e16c58b66d5c432cc6a5a8981c9982f111723ec0894d152be57b3e7e"
 edition = "2024.beta"
 
-[dependencies.Pyth]
+[dependencies.pyth]
 git = "https://github.com/Typus-Lab/pyth-crosschain.git"
 subdir = "target_chains/sui/contracts"
 rev = "main"
