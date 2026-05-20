@@ -4,7 +4,7 @@ edition = "2024"
 
 [dependencies]
 liquid_staking = { git = "https://github.com/solendprotocol/liquid-staking.git", subdir = "contracts", rev = "main" }
-pyth = { git = "https://github.com/solendprotocol/pyth-crosschain.git", subdir = "target_chains/sui/contracts", rev = "sui-contract-mainnet" }
+pyth = { git = "https://github.com/Typus-Lab/pyth-crosschain.git", subdir = "target_chains/sui/contracts", rev = "mainnet" }
 sprungsui = { local = "../sprungsui" }
 sui_system = { system = "sui_system" }
 switchboard = { git = "https://github.com/switchboard-xyz/sui.git", subdir = "on_demand/", rev = "mainnet" }
